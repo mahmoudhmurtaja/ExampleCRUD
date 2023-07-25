@@ -1,4 +1,4 @@
-# ExampleCRUDwhitAjax
+# Example CRUD whit Ajax and DataTable
 
 Welcome to our Server-Side CRUD Operations example with ASP.NET Core 6, using DataTable and Ajax.
 
