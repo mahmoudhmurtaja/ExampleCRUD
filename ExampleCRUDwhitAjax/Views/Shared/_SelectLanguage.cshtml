@@ -1,0 +1,26 @@
+﻿﻿@using Microsoft.AspNetCore.Localization;
+@using Microsoft.Extensions.Options;
+﻿@using System.Globalization
+
+@inject IOptions<RequestLocalizationOptions> options
+
+@{
+    var currentCulture = CultureInfo.CurrentCulture.NativeName;
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+        currentCulture = "العربية";
+
+    var cultures = options.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName }).ToList();
+
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+}
+<div class="dropdown d-flex align-items-center menu-link fs-5 me-lg-3">
+    <a class="dropdown-toggle menu-title px-3 fw-bolder" href="#" style="color: #5E6278" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">@currentCulture</a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
+        @foreach (var item in cultures) 
+        {
+            <li><a class="dropdown-item fw-bolder fs-5" style="color: #5E6278" href="~/Home/SetLanguage?culture=@item.Value&returnUrl=@returnUrl">@(item.Value.StartsWith("ar") ? "العربية" : item.Text)</a></li>
+        }
+    </ul>
+</div>
+

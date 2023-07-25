@@ -1,0 +1,58 @@
+﻿* {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+.text-success * {
+    color: #50CD89 !important;
+}
+
+.text-info * {
+    color: #7239EA !important;
+}
+
+.text-warning * {
+    color: #FFC700 !important;
+}
+
+.text-primary * {
+    color: #009EF7 !important;
+}
+
+.text-danger * {
+    color: #F1416C !important;
+}
+
+.text-dark * {
+    color: #181C32 !important;
+}
+.input-type-number::-webkit-outer-spin-button,
+.input-type-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+
+kbd {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 3px 7px;
+    font-size: 15px;
+    border-bottom-width: initial;
+    color: dimgrey;
+    margin-left: 20px; /* Default margin for LTR text */
+    margin-right: 20px; /* Default margin for RTL text */
+}
+
+/* Specific style for RTL text */
+[dir="rtl"] kbd {
+    margin-left: 20px;
+    margin-right: 0; /* Reset right margin for RTL text */
+}
+
+/* Specific style for LTR text */
+[dir="ltr"] kbd {
+    margin-left: 0; /* Reset left margin for LTR text */
+    margin-right: 20px;
+}

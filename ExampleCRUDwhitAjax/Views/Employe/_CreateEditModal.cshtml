@@ -1,0 +1,71 @@
+﻿@model ExampleCRUDwhitAjax.Models.Employe
+@using ExampleCRUDwhitAjax.Resources;
+
+<div class="modal-header">
+    <h5 class="modal-title fs-3">
+        @if(Model.Id > 0)
+        {
+            <span class="card-icon me-2">
+                <i class="bi bi-pencil-square fs-4"></i>
+            </span>
+            @Global.EditEmploye
+        }
+        else
+        {
+            <span class="card-icon me-2">
+                <i class="bi bi-plus-square fs-4"></i>
+            </span>
+            @Global.AddEmploye
+        }
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form id="form">
+        <div class="validation alert alert-danger d-none fw-bolder fs-5" role="alert">
+        </div>
+
+        <input type="hidden" asp-for="Id" name="Id" />
+
+        <div class="row form-group mb-5">
+            <div class="col-md-3 text-center">
+                <label class="control-label fw-bolder mb-2 fs-4">@Global.Name</label>
+            </div>
+            <div class="col-md-9">
+                <input name="Name" asp-for="Name" type="text" placeholder="@Global.Name" class="form-control form-control-solid" />
+            </div>
+        </div>
+
+        <div class="row form-group mb-5">
+            <div class="col-md-3 text-center">
+                <label class="control-label fw-bolder mb-2 fs-4">@Global.Email</label>
+            </div>
+            <div class="col-md-9">
+                <input name="Email" asp-for="Email" type="text" placeholder="@Global.Email" class="form-control form-control-solid" />
+            </div>
+        </div>
+
+        <div class="row form-group mb-5">
+            <div class="col-md-3 text-center">
+                <label class="control-label fw-bolder mb-2 fs-4">@Global.PhoneNumber</label>
+            </div>
+            <div class="col-md-9">
+                <input name="PhoneNumber" asp-for="PhoneNumber" type="text" placeholder="@Global.PhoneNumber" class="form-control form-control-solid" />
+            </div>
+        </div>
+
+        <div class="row form-group mb-5">
+            <div class="col-md-3 text-center">
+                <label class="control-label fw-bolder mb-2 fs-4">@Global.Address</label>
+            </div>
+            <div class="col-md-9">
+                <input name="Address" asp-for="Address" type="text" placeholder="@Global.Address" class="form-control form-control-solid" />
+            </div>
+        </div>
+       
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary fw-bolder fs-4" data-bs-dismiss="modal">@Global.Close</button>
+            <button type="button" class="btn btn-primary btnSubmit fw-bolder fs-4">@Global.Save</button>
+        </div>
+    </form>
+</div>
